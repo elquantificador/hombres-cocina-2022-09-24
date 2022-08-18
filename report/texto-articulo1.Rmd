@@ -1,0 +1,95 @@
+---
+title: "Artículo 1. Uso del tiempo."
+author: "Christian Javier Salas Marquez"
+date: 'Agosto 2022'
+output:
+  html_document: default
+csl: ieee.csl
+bibliography: referencias-articulo1.bib
+---
+
+```{r setup, include = FALSE}
+# Opciones de chunks
+knitr::opts_chunk$set(echo = F)
+```
+
+
+### Introducción
+
+
+En Ecuador y gran parte del mundo existe la generalización de que las mujeres dedican mucho más tiempo a la cocina que los hombres. Para analizar qué ocurre con estas cifras en nuestro país, podemos utilizar las bases de datos del Instituto Nacional de Estadística y Censos (INEC) para contabilizar el tiempo que los hombres y las mujeres dedican a diversas actividades, tales como el tiempo dedicado a cocinar o preparar alimentos [@INEC.2013]. En este artículo, vamos a comparar cómo ha cambiado el tiempo semanal promedio dedicado a cocinar o preparar alimentos desde el 2012 al 2019, realizando los cálculos por categorías sociodemográficas de interés. Consideramos el año 2019 dado que fue el último año antes de la pandemia.
+
+Antes de comenzar, es necesario definir que, _el trabajo no remunerado_ es un trabajo por el cual no se recibe ningún ingreso a cambio [@INEC.2021]. El trabajo no remunerado es una de las métricas estudiadas por el INEC. Por otro lado, para entender el contexto de la temática de este artículo, revisemos algunos hechos y cifras existentes. De acuerdo con el INEC, las encuestas de uso del tiempo proporcionan una forma de medir cómo distribuyen el tiempo los hombres y las mujeres [@INEC.2013]. Además, el trabajo doméstico y en particular las horas dedicadas a la cocina, se consideran como una forma de trabajo no remunerado. Por estos motivos, consideramos que es importante analizar el promedio de horas semanales destinado a cocinar o preparar alimentos.
+
+Según el INEC, los ecuatorianos dedican aproximadamente 12 mil millones de horas de trabajo no remunerado en los hogares. En particular, el 76.8% de las horas de trabajo no remunerado fueron efectuadas por las mujeres y el 23.2% de estas horas fueron efectuadas por los hombres [@INEC.2020b]. Por otro lado, de acuerdo con un artículo del 2020 del Centro Latinoamericano para el Desarrollo Rural (RIMISP), en Ecuador las mujeres destinan 3 veces más tiempo al trabajo no remunerado que los hombres. Esto se basa en las cifras del INEC que indican que las mujeres dedican 31 horas semanales al trabajo doméstico a diferencia de los hombres que destinan 11.3 horas semanales [@RIMISP.2020].
+
+Entonces, para ejecutar el análisis, utilizamos dos encuestas realizadas por el INEC, la Encuesta Específica de Uso del Tiempo EUT 2012 y la sección de uso del tiempo de la Encuesta Multipropósito 2019. En estas encuestas, se hicieron preguntas para poder identificar la cantidad de horas semanales dedicadas a alguna actividad en específica. Ambas encuestas son representativas a nivel nacional. En este artículo, calculamos los promedios ponderados de horas semanales dedicadas a cocinar o preparar alimentos, separando los cálculos por las variables categóricas de sexo, provincia y grupo de edad, o alguna combinación de éstas.
+
+
+### Resultados
+
+```{r grafico-1}
+knitr::include_graphics("../images/grafico1-articulo1.png")
+```
+
+En esta primera visualización, podemos ver dos gráficos que muestran el tiempo semanal promedio en cocinar o preparar alimentos por sexo. El gráfico de la izquierda es para el año 2012 y el de la derecha para el año 2019. Para el resto de las visualizaciones de este artículo, se cumple el mismo orden.
+
+En el 2012, podemos observar que, en promedio, las mujeres dedicaron 6.24 horas semanales en cocinar o preparar alimentos, mientras que los hombres solo dedicaron 0.63 horas semanales. Por otro lado, para el año 2019 tenemos que, las mujeres destinaron en promedio 6.43 horas semanales en cocinar o preparar alimentos, mientras que los hombres dedicaron esta vez 1.59 horas semanales.
+
+Es decir, para el año 2019, observamos que se mantiene el promedio de horas semanales que las mujeres dedican a cocinar o preparar alimentos. En el caso de los hombres, se observa un aumento del promedio de horas semanales dedicados a la cocina.
+
+Con respecto a las diferencias por cada año, para el 2012, existe una diferencia de `r (6.24 - 0.63)` horas. En el año 2019, esta diferencia se reduce a `r (6.43 - 1.59)` horas.
+
+
+```{r grafico-2}
+knitr::include_graphics("../images/grafico2-articulo1.png")
+```
+
+A partir de esta visualización, podemos notar que en el año 2012, el grupo de edad con la mayor diferencia entre el promedio de horas semanales dedicado a la cocina por hombres y mujeres fue en el grupo de edad de personas entre 40 y 49 años, pues para las mujeres se tienen 10.89 horas semanales y para los hombres 0.96, esto es una diferencia de `r (10.89 - 0.96)` horas semanales. En otras palabras, en el 2012 para el grupo de edad de personas entre 40 y 49 años, las mujeres dedicaron semanalmente `r (10.89 - 0.96)` horas más que los hombres a cocinar o preparar alimentos.
+
+Para el año 2019, la diferencia más alta ocurre en el grupo de edad de personas entre 40 y 49 años. Esta vez, las mujeres tienen un promedio de 8.59 horas y los hombres 1.79 horas semanales dedicadas a la cocina. Esto es, una diferencia de `r (8.59 - 1.79)` horas semanales. La segunda diferencia más alta ocurre en el grupo de edad de personas entre 30 y 39 años con una diferencia de `r (8.42 - 1.66)` horas.
+
+Además, notamos que tanto en el año 2012 como en el 2019, a medida que aumenta el grupo de edad, los hombres aumentan el promedio de horas semanales destinados a la cocina. La única exepción es en el año 2019, los hombres del grupo de edad de personas entre 60 y 69 años dedican más horas semanales a cocinar que el grupo de edad de personas mayores a 70 años. 
+
+Hasta ahora, comparando los resultados del 2012 con los del 2019, podemos notar que existe una tendencia, los hombres están destinando cada vez más horas a las actividades de cocina y las mujeres menos horas. Podrían existir diversos factores que expliquen esta situación.
+
+
+__¿Qué ocurrió en las Azuay, Guayas y Pichincha?__
+
+
+```{r grafico-3}
+knitr::include_graphics("../images/grafico3-articulo1.png")
+```
+
+En esta ultima visualización, se muestran los resultados para las provincias de Azuay, Guayas y Pichincha.
+
+En el año 2012, en la provincia de Pichincha, las mujeres destinaron en promedio 5.96 horas semanales en cocinar o preparar alimentos, mientras que los hombres 0.84 horas a la semana. Para la provincia del Guayas, las mujeres destinaron 6.36 horas semanales y los hombres 0.52 horas. Finalmente, para el caso de Azuay, tenemos 6.07 horas semanales para las mujeres y 1.02 horas semanales para los hombres. En este año, la diferencia más alta ocurre en Guayas. Es decir, las mujeres dedican en promedio `r (6.36 - 0.52)` horas más que los hombres en cocinar.
+
+Por otra parte, revisando los resultados del año 2019 vemos que, en las provincias de Azuay y Guayas, ocurre un aumento del promedio de horas semanales que las mujeres dedican a cocinar o preparar alimentos y un aumento del promedio de las horas semanales en el caso de los hombres. 
+
+La tendencia mencionada anteriormente también se verifica a nivel de las 3 provincias analizadas. Los hombres cocinan cada vez más tiempo por semana, comparando los años 2012 y 2019.
+
+
+### Conclusiones
+
+
+En conclusión, uno de los principales resultados de este análisis es que existe una tendencia de que los hombres están dedicando cada vez más tiempo a la cocina, de acuerdo con la comparación de los calculos realizados para el año 2012 y el 2019. En este caso, revisamos esta tendencia por las categorías de sexo, grupo de edad, las 3 provincias analizadas y alguna combinación de estas. Sin embargo, cabe recalcar que a pesar de la tendencia, en el año 2019 el promedio de horas semanales que las mujeres dedican a cocinar o prepar alimentos sigue siendo siempre mayor que el tiempo dedicado por los hombres en todas las desagregaciones analizadas en este artículo.
+
+Es importante aclarar que no sabemos cuáles son las causas que podrían haber generado esta tendencia. Sin embargo, podemos mencionar posibles razones: una posibilidad podría ser que los hombres y las mujeres se reparten de diferente forma las tareas del hogar.
+
+En el siguiente repositorio de [GitHub](https://github.com/christianjaviersalasmarquez/Articulo1_LIDE), podrás revisar el código, reproducir el análisis y encontrar los cálculos que generan los gráficos presentados.
+
+
+### Notas metodológicas importantes
+
+(1) Sobre la metodología de las encuestas de uso del tiempo, la primera fue levantada en el año 2012, se ejecutó con el nombre de 'Encuesta Específica de Uso del Tiempo', la cual tuvo un tamaño muestral de 22968 viviendas y su población objetivo estuvo constituida por las personas de 12 años y más. El periodo de levantamiento de esta encuesta fue entre noviembre y diciembre de 2012. La segunda fue levantada en el año 2019 como parte de la sección de uso del tiempo de la Encuesta Nacional Multipropósito de Hogares 2019. En la Encuesta Nacional Multipropósito de Hogares la población objetivo abarca los hogares y personas constituidas por personas de 5 años y más. El tamaño muestral fue de 12072 viviendas.
+
+
+
+
+
+
+
+
+
+
