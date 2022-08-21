@@ -2,7 +2,6 @@
 ## --------------------- Descarga de bases de datos -------------------------- ##
 ## --------------------------------------------------------------------------- ##
 
-
 # 2012
 
 url <- "https://github.com/christianjaviersalasmarquez/Articulo1_LIDE/raw/main/data/Base%20EUT%202012.zip"
@@ -20,9 +19,4 @@ EUT2012.f.name <- unzip(tf, list=TRUE)$Name[1] # El archivo SAV de la encuesta E
 unzip(tf, files=EUT2012.f.name, exdir=td, overwrite=TRUE)
 
 EUT2012.f.path <- file.path(td, EUT2012.f.name)
-
-
-
-
-
 
