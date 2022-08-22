@@ -1,19 +1,12 @@
 ---
 title: "Los hombres ecuatorianos dedican cada vez más tiempo a la cocina ¿Qué indican los datos?"
-author: "Christian Javier Salas Márquez"
-date: 'Agosto 2022'
+author: "Christian Salas Márquez"
+date: '2022-08-22'
 output:
   html_document: default
-csl: ieee.csl
+csl: style.csl
 bibliography: referencias-articulo1.bib
-nocite:
-  - '@INEC.2012a'
-  - '@INEC.2012b'
-  - '@INEC.2019a'
-  - '@INEC.2019b'
-  - '@INEC.2020a'
-  - '@INEC.2020d'
-  - '@INEC.2020e'
+nocite: '@*'
 ---
 
 ```{r setup, include = FALSE}
