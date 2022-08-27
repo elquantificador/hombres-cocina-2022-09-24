@@ -4,7 +4,7 @@
 
 # 2012
 
-url <- "https://github.com/christianjaviersalasmarquez/Articulo1_LIDE/raw/main/data/Base%20EUT%202012.zip"
+url <- "https://github.com/christianjaviersalasmarquez/ut-ec-hombres-cocina/raw/main/data/Base%20EUT%202012.zip"
 
 td <- tempdir() # Se crea un directorio temporal
 
