@@ -23,9 +23,9 @@ data_UT2012 <- read_sav(EUT2012.f.path)
 
 # 2019
 
-data_UT2019 <- read_csv2("https://raw.githubusercontent.com/christianjaviersalasmarquez/Articulo1_LIDE/main/data/201912_multibdd_uso_del_tiempo.sav.csv") # read_csv2 utiliza ; como separador y , para punto decimal
+data_UT2019 <- read_csv2("https://raw.githubusercontent.com/christianjaviersalasmarquez/ut-ec-hombres-cocina/main/data/201912_multibdd_uso_del_tiempo.sav.csv") # read_csv2 utiliza ; como separador y , para punto decimal
 
-data_personas2019 <- read_csv2("https://raw.githubusercontent.com/christianjaviersalasmarquez/Articulo1_LIDE/main/data/201912_multibdd_personas.sav.csv") # read_csv2 utiliza ; como separador y , para punto decimal
+data_personas2019 <- read_csv2("https://raw.githubusercontent.com/christianjaviersalasmarquez/ut-ec-hombres-cocina/main/data/201912_multibdd_personas.sav.csv") # read_csv2 utiliza ; como separador y , para punto decimal
 
 
 ## --------------------------------------------------------------------------- ##
