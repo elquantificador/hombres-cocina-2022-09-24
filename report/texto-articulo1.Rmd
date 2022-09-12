@@ -38,15 +38,15 @@ Para el 2012 podemos observar que, las mujeres dedicaron en promedio 6.24 horas 
 
 Es decir, para el año 2019, observamos que se mantiene el promedio de horas semanales que las mujeres dedican a cocinar o preparar alimentos, mientras que en el caso de los hombres se observa un aumento del promedio de horas semanales dedicados a la cocina.
 
-Con respecto a las diferencias entre las horas semanales que dedican a la cocina los hombres y mujeres, para el 2012 existe una diferencia de `r (6.24 - 0.63)` horas semanales. Por otra parte, para el año 2019 esta diferencia se reduce a `r (6.43 - 1.59)` horas.
+Con respecto a las diferencias entre las horas semanales que dedican a la cocina los hombres y mujeres, para el 2012 existe una diferencia de 5.61 horas semanales. Por otra parte, para el año 2019 esta diferencia se reduce a 4.84 horas.
 
 ```{r grafico-2}
 knitr::include_graphics("../images/grafico2-articulo1.png")
 ```
 
-A partir de esta visualización, podemos notar que en el año 2012, el grupo de edad con la mayor diferencia entre el promedio de horas semanales dedicado a la cocina por hombres y mujeres fue en el grupo de edad de personas entre 40 y 49 años, pues para las mujeres se tienen 10.89 horas semanales y para los hombres 0.96, esto es una diferencia de `r (10.89 - 0.96)` horas semanales. En otras palabras, en el 2012 para el grupo de edad de personas entre 40 y 49 años, las mujeres dedicaron semanalmente `r (10.89 - 0.96)` horas más que los hombres a cocinar o preparar alimentos.
+A partir de esta visualización, podemos notar que en el año 2012, el grupo de edad con la mayor diferencia entre el promedio de horas semanales dedicado a la cocina por hombres y mujeres fue en el grupo de edad de personas entre 40 y 49 años, pues para las mujeres se tienen 10.89 horas semanales y para los hombres 0.96, esto es una diferencia de 9.93 horas semanales. En otras palabras, en el 2012 para el grupo de edad de personas entre 40 y 49 años, las mujeres dedicaron semanalmente 9.93 horas más que los hombres a cocinar o preparar alimentos.
 
-Para el año 2019, la diferencia más alta también ocurre en el grupo de edad de personas entre 40 y 49 años. Esta vez, las mujeres tienen un promedio de 8.59 horas y los hombres 1.79 horas semanales dedicadas a la cocina. Esto es, una diferencia de `r (8.59 - 1.79)` horas semanales. La segunda diferencia más alta ocurre en el grupo de edad de personas entre 30 y 39 años con una diferencia de `r (8.42 - 1.66)` horas.
+Para el año 2019, la diferencia más alta también ocurre en el grupo de edad de personas entre 40 y 49 años. Esta vez, las mujeres tienen un promedio de 8.59 horas y los hombres 1.79 horas semanales dedicadas a la cocina. Esto es, una diferencia de 6.8 horas semanales. La segunda diferencia más alta ocurre en el grupo de edad de personas entre 30 y 39 años con una diferencia de 6.76 horas.
 
 Además, notamos que tanto en el año 2012 como en el 2019, a medida que aumenta el grupo de edad, los hombres aumentan el promedio de horas semanales destinados a la cocina. Hasta ahora, comparando los resultados del 2012 con los del 2019, podemos notar que existe la tendencia de que los hombres están destinando cada vez más horas a las actividades de cocina. 
 
@@ -58,7 +58,7 @@ knitr::include_graphics("../images/grafico3-articulo1.png")
 
 En esta ultima visualización, se muestran los resultados para las provincias de Azuay, Guayas y Pichincha.
 
-En el año 2012, en la provincia de Pichincha, las mujeres destinaron en promedio 5.96 horas semanales en cocinar o preparar alimentos, mientras que los hombres 0.84 horas a la semana. Para la provincia del Guayas, las mujeres destinaron 6.36 horas semanales y los hombres 0.52 horas. Finalmente, para el caso de Azuay, tenemos 6.07 horas semanales para las mujeres y 1.02 horas semanales para los hombres. En este año, la diferencia más alta ocurre en Guayas. Es decir, las mujeres de la provincia del Guayas dedican en promedio `r (6.36 - 0.52)` horas más que los hombres en cocinar.
+En el año 2012, en la provincia de Pichincha, las mujeres destinaron en promedio 5.96 horas semanales en cocinar o preparar alimentos, mientras que los hombres 0.84 horas a la semana. Para la provincia del Guayas, las mujeres destinaron 6.36 horas semanales y los hombres 0.52 horas. Finalmente, para el caso de Azuay, tenemos 6.07 horas semanales para las mujeres y 1.02 horas semanales para los hombres. En este año, la diferencia más alta ocurre en Guayas. Es decir, las mujeres de la provincia del Guayas dedican en promedio 5.84 horas más que los hombres en preparar alimentos.
 
 Por otra parte, revisando los resultados del año 2019 vemos que, en las provincias de Azuay y Guayas, ocurre un aumento del promedio de horas semanales que las mujeres dedican a cocinar o preparar alimentos y en Pichincha una disminución. Para el caso de los hombres, observamos un aumento del promedio de las horas semanales en las tres provincias. 
 
@@ -73,7 +73,7 @@ Sin embargo, cabe recalcar que a pesar de esta tendencia, el promedio de horas s
 
 Es importante aclarar que no sabemos cuáles son las causas que podrían haber generado que ahora los hombres dediquen más tiempo a la cocina que antes. Una posibilidad podría ser que los hombres y las mujeres se reparten de diferente forma las tareas del hogar.
 
-En el siguiente repositorio de [GitHub](https://github.com/christianjaviersalasmarquez/Articulo1_LIDE), podrás revisar el código, reproducir el análisis y encontrar los cálculos que generan los gráficos presentados.
+En el siguiente repositorio de [GitHub](https://github.com/christianjaviersalasmarquez/Articulo1_LIDE), podrás revisar el código, encontrar los cálculos y reproducir el análisis.
 
 
 ### Notas metodológicas importantes
