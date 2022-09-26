@@ -73,7 +73,7 @@ Sin embargo, cabe recalcar que a pesar de esta tendencia, el promedio de horas s
 
 Es importante aclarar que no sabemos cuáles son las causas que podrían haber generado que ahora los hombres dediquen más tiempo a la cocina que antes. Una posibilidad podría ser que los hombres y las mujeres se reparten de diferente forma las tareas del hogar.
 
-En el siguiente repositorio de [GitHub](https://github.com/christianjaviersalasmarquez/Articulo1_LIDE), podrás revisar el código, encontrar los cálculos y reproducir el análisis.
+En el siguiente repositorio de [GitHub](https://github.com/christianjaviersalasmarquez/ut-ec-hombres-cocina), podrás revisar el código, encontrar los cálculos y reproducir el análisis.
 
 
 ### Notas metodológicas importantes
