@@ -16,6 +16,9 @@ if(!require(srvyr)) install.packages("srvyr", repos = "http://cran.us.r-project.
 ## ---------------------------- Bases de datos ------------------------------- ##
 ## --------------------------------------------------------------------------- ##
 
+# Lee la copia local de data/ y usa la URL solo si el archivo no está
+fuente_local <- function(archivo, url) if (file.exists(file.path("data", archivo))) file.path("data", archivo) else url
+
 # 2012
 
 data_UT2012 <- read_sav(EUT2012.f.path)
@@ -23,9 +26,9 @@ data_UT2012 <- read_sav(EUT2012.f.path)
 
 # 2019
 
-data_UT2019 <- read_csv2("https://raw.githubusercontent.com/christianjaviersalasmarquez/ut-ec-hombres-cocina/main/data/201912_multibdd_uso_del_tiempo.sav.csv") # read_csv2 utiliza ; como separador y , para punto decimal
+data_UT2019 <- read_csv2(fuente_local("201912_multibdd_uso_del_tiempo.sav.csv", "https://raw.githubusercontent.com/christianjaviersalasmarquez/ut-ec-hombres-cocina/main/data/201912_multibdd_uso_del_tiempo.sav.csv")) # read_csv2 utiliza ; como separador y , para punto decimal
 
-data_personas2019 <- read_csv2("https://raw.githubusercontent.com/christianjaviersalasmarquez/ut-ec-hombres-cocina/main/data/201912_multibdd_personas.sav.csv") # read_csv2 utiliza ; como separador y , para punto decimal
+data_personas2019 <- read_csv2(fuente_local("201912_multibdd_personas.sav.csv", "https://raw.githubusercontent.com/christianjaviersalasmarquez/ut-ec-hombres-cocina/main/data/201912_multibdd_personas.sav.csv")) # read_csv2 utiliza ; como separador y , para punto decimal
 
 
 ## --------------------------------------------------------------------------- ##
