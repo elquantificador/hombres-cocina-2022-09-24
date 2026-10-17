@@ -1,0 +1,4 @@
+source_name,institution,period,official_url,downloaded_file,script
+Encuesta Específica de Uso del Tiempo (EUT) 2012,INEC,2012-11 a 2012-12,https://www.ecuadorencifras.gob.ec//documentos/web-inec/Uso_Tiempo/Metodologia_EUT_2012.pdf,data/Base EUT 2012.zip,code/articulo1_download.R
+Encuesta Nacional Multipropósito de Hogares 2019 (uso del tiempo),INEC,2019-12,[COMPLETAR: no se encontró el enlace oficial en el repositorio ni en el artículo],data/201912_multibdd_uso_del_tiempo.sav.csv,code/articulo1_data_manipulation.R
+Encuesta Nacional Multipropósito de Hogares 2019 (personas),INEC,2019-12,[COMPLETAR: no se encontró el enlace oficial en el repositorio ni en el artículo],data/201912_multibdd_personas.sav.csv,code/articulo1_data_manipulation.R

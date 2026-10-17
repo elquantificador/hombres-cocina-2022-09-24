@@ -8,49 +8,75 @@ repositorios.
 
 - **Título:** Los hombres ecuatorianos dedican cada vez más tiempo a la cocina ¿Qué indican los datos?
 - **Descripción del repositorio:** Repositorio del artículo de Christian Salas: "Los hombres ecuatorianos dedican cada vez más tiempo a la cocina ¿Qué indican los datos?"
-- **Autoría:** [COMPLETAR: nombres, igual que en el sitio]
-- **Fecha de publicación:** [COMPLETAR: AAAA-MM-DD]
-- **Artículo publicado:** [COMPLETAR: enlace a elquantificador.org]
-- **Categoría:** [COMPLETAR: Economía, Política, Salud, Educación o Valores y
-  comportamiento]
-- **Edición:** [COMPLETAR: por ejemplo, Julio-Diciembre 2026]
+- **Autoría:** Christian Salas Márquez
+- **Fecha de publicación:** 2022-09-24
+- **Artículo publicado:** https://elquantificador.org/post/valores/2022-09-24-uso-del-tiempo-cocina/
+- **Categoría:** Valores y comportamiento
+- **Edición:** Julio 2022-Enero 2023
 
 ## Estado
 
-[COMPLETAR: en preparación, en revisión editorial o publicado. Anota qué falta
-para cerrar el artículo.]
+Publicado el 2022-09-24. La cabecera de `report/texto-articulo1.Rmd` conserva
+la fecha de borrador 2022-08-22.
 
 ## Pregunta y alcance
 
-[COMPLETAR: dos o tres oraciones con la pregunta, el periodo, la cobertura
-geográfica y la unidad de análisis.]
+El artículo compara cuánto tiempo semanal dedican hombres y mujeres a cocinar o
+preparar alimentos en Ecuador entre 2012 y 2019 (se toma 2019 por ser el último
+año antes de la pandemia). Calcula promedios ponderados de horas semanales a
+partir de dos encuestas del INEC representativas a nivel nacional, por sexo,
+por grupo de edad y por provincia. La unidad de análisis es la persona (12
+años o más en 2012; 5 años o más en 2019, según la población objetivo de cada
+encuesta).
 
 ## Requisitos
 
-- R [COMPLETAR: versión, por ejemplo 4.5.x].
-- Paquetes de R: [COMPLETAR: lista en orden alfabético].
+- R: no documentada en el repositorio.
+- Paquetes de R: foreign, haven, knitr, patchwork, radiant.data, readr,
+  rstudioapi, srvyr, survey, tidyverse. Los scripts los cargan con
+  `require()` y los instalan si faltan.
 
 ## Fuentes de datos
 
 | Fuente | Institución | Periodo | Acceso | Script |
 |---|---|---|---|---|
-| [COMPLETAR] | [COMPLETAR] | [COMPLETAR] | [COMPLETAR: descarga automática o manual] | `code/cleaning/00_download_fuente.R` |
+| Encuesta Específica de Uso del Tiempo (EUT) 2012 | INEC; metodología citada en el artículo: https://www.ecuadorencifras.gob.ec//documentos/web-inec/Uso_Tiempo/Metodologia_EUT_2012.pdf | noviembre a diciembre de 2012 | descarga automática del zip desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copia local en `data/Base EUT 2012.zip` | `code/articulo1_download.R` |
+| Encuesta Nacional Multipropósito de Hogares 2019, secciones de uso del tiempo y de personas | INEC; [COMPLETAR: no se encontró el enlace oficial de descarga en el repositorio ni en el artículo] | diciembre de 2019 | lectura directa de los CSV desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copias locales en `data/` | `code/articulo1_data_manipulation.R` |
 
-Si alguna fuente no permite descarga automática, explica aquí cómo obtenerla y
-dónde colocarla en `data/raw/`.
+La descarga automática depende de que ese repositorio externo siga en línea.
+Para replicar sin red, las copias locales son `data/Base EUT 2012.zip`,
+`data/201912_multibdd_uso_del_tiempo.sav.csv` y
+`data/201912_multibdd_personas.sav.csv` (CSV con `;` como separador y `,`
+como decimal).
 
 ## Salidas
 
-- `outputs/tables/[COMPLETAR].csv`: [COMPLETAR: qué contiene].
-- `outputs/graphs/[COMPLETAR].png`: [COMPLETAR: qué muestra].
-- `article/images/graficoN.png`: copias numeradas según el orden del texto.
+- `images/grafico1-articulo1.png`: promedio de horas semanales en cocinar o
+  preparar alimentos en 2012 y 2019, por sexo.
+- `images/grafico2-articulo1.png`: lo mismo, por grupo de edad y sexo.
+- `images/grafico3-articulo1.png`: lo mismo, por provincia y sexo.
+- `report/texto-articulo1.Rmd`: texto del artículo, que incluye los tres
+  gráficos desde `../images/`.
 
 ## Cómo replicar en este repositorio
 
-Este repositorio conserva sus instrucciones originales en la sección
-"README anterior". Si todavía no tiene `MASTER.R`, sigue esas instrucciones.
-Cuando se migre a la estructura estándar, reemplaza esta sección por los pasos
-de `MASTER.R`.
+El repositorio no tiene `MASTER.R`; el README anterior no detalla pasos, así
+que el orden se deduce de los scripts:
+
+1. Abre el repositorio en RStudio (`code/articulo1_analysis.R` usa
+   `rstudioapi` para fijar el directorio de trabajo en la raíz).
+2. `code/articulo1_download.R` descarga y descomprime la base EUT 2012; lo
+   ejecuta `code/articulo1_analysis.R` con `source()`.
+3. `code/articulo1_data_manipulation.R` carga las bases 2012 y 2019, calcula
+   las horas semanales y los grupos de edad y provincia. Ningún script lo
+   llama; ejecútalo antes del análisis en la misma sesión.
+4. `code/articulo1_analysis.R` define el diseño muestral con `srvyr`, calcula
+   los promedios ponderados y guarda los tres gráficos en `images/`.
+5. Renderiza `report/texto-articulo1.Rmd` para generar el artículo en HTML.
+
+Observación: la lista de pasos depende de que `data_manipulation` se ejecute a
+mano, porque `articulo1_analysis.R` solo hace `source()` de
+`articulo1_download.R`.
 
 ## README anterior
 
