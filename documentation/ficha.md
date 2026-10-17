@@ -41,7 +41,7 @@ encuesta).
 | Fuente | Institución | Periodo | Acceso | Script |
 |---|---|---|---|---|
 | Encuesta Específica de Uso del Tiempo (EUT) 2012 | INEC; metodología citada en el artículo: https://www.ecuadorencifras.gob.ec//documentos/web-inec/Uso_Tiempo/Metodologia_EUT_2012.pdf | noviembre a diciembre de 2012 | descarga automática del zip desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copia local en `data/Base EUT 2012.zip` | `code/articulo1_download.R` |
-| Encuesta Nacional Multipropósito de Hogares 2019, secciones de uso del tiempo y de personas | INEC; [COMPLETAR: no se encontró el enlace oficial de descarga en el repositorio ni en el artículo] | diciembre de 2019 | lectura directa de los CSV desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copias locales en `data/` | `code/articulo1_data_manipulation.R` |
+| Encuesta Nacional Multipropósito de Hogares 2019, secciones de uso del tiempo y de personas | INEC; [catálogo ANDA, Encuesta Nacional Multipropósito de Hogares 2019](https://anda.inec.gob.ec/anda5/index.php/catalog/837) | diciembre de 2019 | lectura directa de los CSV desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copias locales en `data/` | `code/articulo1_data_manipulation.R` |
 
 La descarga automática depende de que ese repositorio externo siga en línea.
 Para replicar sin red, las copias locales son `data/Base EUT 2012.zip`,
