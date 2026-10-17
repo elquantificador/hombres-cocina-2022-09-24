@@ -33,21 +33,21 @@ encuesta).
 
 - R: no documentada en el repositorio.
 - Paquetes de R: foreign, haven, knitr, patchwork, radiant.data, readr,
-  rstudioapi, srvyr, survey, tidyverse. Los scripts los cargan con
+  srvyr, survey, tidyverse. Los scripts los cargan con
   `require()` y los instalan si faltan.
 
 ## Fuentes de datos
 
 | Fuente | Institución | Periodo | Acceso | Script |
 |---|---|---|---|---|
-| Encuesta Específica de Uso del Tiempo (EUT) 2012 | INEC; metodología citada en el artículo: https://www.ecuadorencifras.gob.ec//documentos/web-inec/Uso_Tiempo/Metodologia_EUT_2012.pdf | noviembre a diciembre de 2012 | descarga automática del zip desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copia local en `data/Base EUT 2012.zip` | `code/articulo1_download.R` |
-| Encuesta Nacional Multipropósito de Hogares 2019, secciones de uso del tiempo y de personas | INEC; [catálogo ANDA, Encuesta Nacional Multipropósito de Hogares 2019](https://anda.inec.gob.ec/anda5/index.php/catalog/837) | diciembre de 2019 | lectura directa de los CSV desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copias locales en `data/` | `code/articulo1_data_manipulation.R` |
+| Encuesta Específica de Uso del Tiempo (EUT) 2012 | INEC; metodología citada en el artículo: https://www.ecuadorencifras.gob.ec//documentos/web-inec/Uso_Tiempo/Metodologia_EUT_2012.pdf | noviembre a diciembre de 2012 | lectura de `data/Base EUT 2012.zip`; si falta, descarga automática del zip desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copia local en `data/Base EUT 2012.zip` | `code/articulo1_download.R` |
+| Encuesta Nacional Multipropósito de Hogares 2019, secciones de uso del tiempo y de personas | INEC; [catálogo ANDA, Encuesta Nacional Multipropósito de Hogares 2019](https://anda.inec.gob.ec/anda5/index.php/catalog/837) | diciembre de 2019 | lectura de los CSV de `data/`; si faltan, lectura directa desde el repositorio `christianjaviersalasmarquez/ut-ec-hombres-cocina`; copias locales en `data/` | `code/articulo1_data_manipulation.R` |
 
-La descarga automática depende de que ese repositorio externo siga en línea.
-Para replicar sin red, las copias locales son `data/Base EUT 2012.zip`,
-`data/201912_multibdd_uso_del_tiempo.sav.csv` y
-`data/201912_multibdd_personas.sav.csv` (CSV con `;` como separador y `,`
-como decimal).
+Los scripts usan primero las copias locales de `data/`
+(`Base EUT 2012.zip`, `201912_multibdd_uso_del_tiempo.sav.csv` y
+`201912_multibdd_personas.sav.csv`, CSV con `;` como separador y `,` como
+decimal) y solo recurren al repositorio externo si falta alguna. Las copias
+locales tienen el mismo contenido que esa descarga.
 
 ## Salidas
 
@@ -60,23 +60,21 @@ como decimal).
 
 ## Cómo replicar en este repositorio
 
-El repositorio no tiene `MASTER.R`; el README anterior no detalla pasos, así
-que el orden se deduce de los scripts:
+El repositorio no tiene `MASTER.R`; el README anterior no detalla pasos.
 
-1. Abre el repositorio en RStudio (`code/articulo1_analysis.R` usa
-   `rstudioapi` para fijar el directorio de trabajo en la raíz).
-2. `code/articulo1_download.R` descarga y descomprime la base EUT 2012; lo
-   ejecuta `code/articulo1_analysis.R` con `source()`.
-3. `code/articulo1_data_manipulation.R` carga las bases 2012 y 2019, calcula
-   las horas semanales y los grupos de edad y provincia. Ningún script lo
-   llama; ejecútalo antes del análisis en la misma sesión.
-4. `code/articulo1_analysis.R` define el diseño muestral con `srvyr`, calcula
-   los promedios ponderados y guarda los tres gráficos en `images/`.
-5. Renderiza `report/texto-articulo1.Rmd` para generar el artículo en HTML.
+1. Abre una sesión de R con la raíz del repositorio como directorio de
+   trabajo (las rutas son relativas a esa raíz; no hace falta RStudio).
+2. Ejecuta `code/articulo1_analysis.R`. Este script llama, en orden, a
+   `code/articulo1_download.R` (descomprime `data/Base EUT 2012.zip` en un
+   directorio temporal) y a `code/articulo1_data_manipulation.R` (carga las
+   bases 2012 y 2019 desde `data/`, calcula las horas semanales y los
+   grupos de edad y provincia).
+3. El análisis define el diseño muestral con `srvyr`, calcula los promedios
+   ponderados y guarda los tres gráficos en `images/`.
+4. Renderiza `report/texto-articulo1.Rmd` para generar el artículo en HTML.
 
-Observación: la lista de pasos depende de que `data_manipulation` se ejecute a
-mano, porque `articulo1_analysis.R` solo hace `source()` de
-`articulo1_download.R`.
+Solo se necesita conexión a internet para instalar paquetes o si falta algún
+archivo de `data/`.
 
 ## README anterior
 
